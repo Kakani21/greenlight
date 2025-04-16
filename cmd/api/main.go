@@ -8,6 +8,7 @@ import (
 	"fmt"
 	"greenlight.kakani21.net/internal/data_1"
 	"greenlight.kakani21.net/internal/mailer"
+	"greenlight.kakani21.net/internal/vcs"
 	"log/slog"
 	"os"
 	"runtime"
@@ -18,7 +19,9 @@ import (
 	_ "github.com/lib/pq"
 )
 
-const version = "1.0.0"
+var (
+	version = vcs.Version()
+)
 
 type config struct {
 	port int
